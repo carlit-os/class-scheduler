@@ -59,7 +59,7 @@ const App = () => {
       <CourseList courses={schedule.courses} />
     </SafeAreaView>
   );
-}
+};
 
 
 const styles = StyleSheet.create({
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   courseButton: {
-    flex: 1,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
