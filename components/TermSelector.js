@@ -2,15 +2,6 @@ import React from 'react';
 import {TouchableOpacity, StyleSheet, View, Text} from 'react-native';
 
 
-  
-// const TermButton = ({term, setSelectedTerm, isActive}) => (
-//     <TouchableOpacity style={styles[isActive ? 'termButtonActive' : 'termButton']} 
-//         onPress={() => setSelectedTerm(term)}>
-//       <Text style={styles.termText}>{term}</Text>
-//     </TouchableOpacity>
-// );
-
-
 const TermButton = ({term, setSelectedTerm, isActive}) => (
     <TouchableOpacity style={styles[isActive ? 'termButtonActive' : 'termButton']} 
         onPress={() => setSelectedTerm(term)}>
@@ -31,18 +22,7 @@ const TermSelector = ({terms, selectedTerm, setSelectedTerm}) => (
     </View>
 
 );
-// const TermSelector = ({terms, selectedTerm, setSelectedTerm}) => (
-//     <View style={styles.termSelector}>
-//       { 
-//         terms.map(term => (
-//           <TermButton key={term} term={term} setSelectedTerm={setSelectedTerm}
-//             isActive={term === selectedTerm}
-//           />
-//         ))
-//       }
-//     </View>
-// );
-  
+
 ///Styling 
 const termButtonBase = { //common styling options for a few elements
     flex: 1,
@@ -63,11 +43,11 @@ const styles = StyleSheet.create({
       width: 350,
     },
     termButton: {
-      ...termButtonBase,
+      ...termButtonBase,  //spread operator
       backgroundColor: '#4f9f64',
     },
     termButtonActive: {
-        ...termButtonBase,
+        ...termButtonBase,   //spread operator
         backgroundColor: '#105f25',
       },
       termText: {
