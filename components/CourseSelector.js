@@ -6,7 +6,7 @@ import Course from "./Course"
 import { hasConflict,getCourseTerm, getCourseNumber, terms} from '../utils/course';
 
 
-const CourseSelector = ({courses}) => {
+const CourseSelector = ({courses, view}) => {
     const [selected, setSelected] = useState([]); //at first no courses, will be selected
   
     const toggle = course => setSelected(selected => (
@@ -17,7 +17,7 @@ const CourseSelector = ({courses}) => {
       <View style={styles.courseList}>
         { 
           courses.map(course => (  //mapping was moved here from CourseList.js in commits prior to conflicts
-            <Course key={course.id} course={course} 
+            <Course key={course.id} course={course} view={view}
               isDisabled={hasConflict(course, selected)}
               select={toggle}
               isSelected={selected.includes(course)}

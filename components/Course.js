@@ -2,9 +2,10 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { hasConflict,getCourseTerm, getCourseNumber, terms} from '../utils/course';
 
-const Course = ({course, isDisabled, isSelected, select}) => (
+const Course = ({course, isDisabled, isSelected, select, view}) => (
     <TouchableOpacity style={styles[isSelected ? 'courseButtonSelected' : isDisabled? 'courseButtonDisabled':'courseButton']}
-        onPress={() => { if (!isDisabled) select(course); }}> 
+        onPress={() => { if (!isDisabled) select(course); }} 
+        onLongPress={() => view(course)}>
       <Text style={styles.courseText}>
         {`CS ${getCourseNumber(course)}\n${course.meets}`}
       </Text>
@@ -30,11 +31,11 @@ const styles = StyleSheet.create({
     },
     courseButtonSelected: {
         ...courseButtonBase,   //spread operator
-        backgroundColor: '004a99'
+        backgroundColor: '#004a99'
     },
     courseButtonDisabled: {
         ...courseButtonBase,  //spread operator
-        backgroundColor: 'd3d3d3'
+        backgroundColor: '#d3d3d3'
     },
     courseText:{
         color: '#fff',
