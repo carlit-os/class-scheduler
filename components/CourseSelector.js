@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { StyleSheet, View} from 'react-native';
 import TermSelector from "./TermSelector";
-import CourseList from "./CourseList";
 import Course from "./Course"
 import { hasConflict,getCourseTerm, getCourseNumber, terms} from '../utils/course';
 
