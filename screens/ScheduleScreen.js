@@ -4,11 +4,9 @@ import CourseList from '../components/CourseList';
 import UserContext from '../UserContext';
 import {firebase} from '../firebase'; //firebaseConfig
 
-
-const Banner = ({title}) => (
-  <Text style={styles.bannerStyle}>{title || '[loading...]'}</Text>
+const Banner = ({title}) => (	
+  <Text style={styles.bannerStyle}>{title || '[loading...]'}</Text>	
 );
-
 
 const fixCourses = json => ({
   ...json,
@@ -24,7 +22,6 @@ const ScheduleScreen = ({navigation}) => {
   const view = (course) => {
     navigation.navigate(canEdit ? 'CourseEditScreen' : 'CourseDetailScreen', { course });
   };
-
 
   useEffect(() => {
     const db = firebase.database().ref();
@@ -46,20 +43,11 @@ const ScheduleScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 40,
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingTop: 20,
   },
-  banner: {
-    color: '#888',
-    fontSize: 32,
-  },
-  bannerStyle: {
-    color: '#888',
-    fontSize: 32,
-  }
 });
-
 
 export default ScheduleScreen;
